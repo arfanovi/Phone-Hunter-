@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Phone Hunter</title>
+</head>
+<body>
+    
+
+    <header>
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                  </div>
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                  <li><a>Mobile Phone </a></li>
+                  <li><a>Used Phone</a></li>
+                  <li><a>Top Brand</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="navbar-center">
+              <a class="btn btn-ghost text-xl">Phone Hunter</a>
+            </div>
+           
+               
+    
+        <div class=" p-4 m-4 justify-center items-center"> 
+            <input id="searchhField"  type="text" placeholder="find your phone" class="input input-bordered w-full max-w-xs bg-gray-100 border-black shadow" />
+
+            <button onclick="searchDataHandle()" class="btn  border-none text-white font-bold">Search</button>
+        </div>
+      
+          </div>
+
+    </header>
+
+  
+    <main class="container lg:mx-auto md:mx-auto mx-auto mt-8"  >
+
+        <!-- Search Section  -->
+
+
+
+        <section>
+
+            <div id="loadingSpinner" class="text-center my-20 hidden">
+                <span class="loading loading-ring loading-lg text-primary "></span>
+            </div>
+            
+
+            <div id="phone-container" class="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6">
+                <div class="card w-96 bg-gray-100 shadow-xl">
+                
+                  </div>
+            </div>
+
+            <!-- Show all button -->
+            <div id="showAllPhone"  class="justify-center items-center ">
+                <button onclick="handleShowALl()" class="btn btn-primary text-center hidden ">Show All</button>
+            </div>
+
+        </section>
+
+
+
+        <!-- Show Detils Modal -->
+        <section>
+            <!-- Open the modal using ID.showModal() method -->
+
+<dialog id="show_detais_modal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <h3 id="phone-name" class="font-bold text-3xl"></h3>
+    <div id="showDetailsContainer">
+
+      
+
+    </div>
+
+
+
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+        </section>
+
+
+        <br><br>
+
+
+        <!-- Oppen New Brand  -->
+        <section>
+            <div class="drawer">
+                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content">
+                  <!-- Page content here -->
+                  <label for="my-drawer" class="btn btn-primary drawer-button">Open New Brand</label>
+                </div> 
+                <div class="drawer-side">
+                  <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                  <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                    <!-- Sidebar content here -->
+                    <li><a>HONOR</a></li>
+                    <li><a>ASUS</a></li>
+                    <li><a>HTC</a></li>
+                    <li><a>LG</a></li>
+                    <li><a>GOOGLE PIXEL</a></li>
+                    
+                  </ul>
+                </div>
+              </div>
+
+        </section>
+        <br>
+
+
+
+
+        <section>
+         <div class="text-center ">
+            <ul class="steps text-center">
+             
+                <li class="step step-primary">Choose Phone</li>
+                <li class="step step-info">Purchase</li>
+                <li class="step step-info">Receive Phone</li>
+              </ul>
+         </div>
+        </section>
+
+
+
+
+        <br><br><br><br><br><br>
+
+        <!-- Contact From -->
+
+        <div class="justify-center  p-8  rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-6">Contact Us</h2>
+            <form action="#" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-semibold mb-2">Your Name</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Ovi">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-semibold mb-2">Your Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="ovi@example.com">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Your message here"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+
+
+    <br><br><br>
+    <footer>
+
+        <footer class="footer grid-rows-2 p-10 bg-neutral text-neutral-content">
+            <nav>
+              <h6 class="footer-title">Services</h6> 
+              <a class="link link-hover">Branding</a>
+          
+            </nav> 
+            <nav>
+              <h6 class="footer-title">Company</h6> 
+              <a class="link link-hover">About us</a>
+              <a class="link link-hover">Contact</a>
+              <a class="link link-hover">Jobs</a>
+              <a class="link link-hover">Press kit</a>
+            </nav> 
+            <nav>
+              <h6 class="footer-title">Legal</h6> 
+              <a class="link link-hover">Terms of use</a>
+              <a class="link link-hover">Privacy policy</a>
+              <a class="link link-hover">Cookie policy</a>
+            </nav> 
+            <nav>
+              <h6 class="footer-title">Social</h6> 
+              <a class="link link-hover">Twitter</a>
+              <a class="link link-hover">Instagram</a>
+              <a class="link link-hover">Facebook</a>
+            
+            </nav> 
+            <nav>
+              <h6 class="footer-title">Explore</h6> 
+              <a class="link link-hover">Features</a>
+              <a class="link link-hover">Enterprise</a>
+              <a class="link link-hover">Security</a>
+              <a class="link link-hover">Pricing</a>
+            </nav> 
+            <nav>
+              <h6 class="footer-title">Apps</h6> 
+              <a class="link link-hover">Mac</a>
+              <a class="link link-hover">Windows</a>
+              <a class="link link-hover">iPhone</a>
+              <a class="link link-hover">Android</a>
+            </nav>
+          </footer>
+
+    </footer>
+
+<script src="js/script.js"></script>
+<script src="tailwind.config.js"></script>
+</body>
+</html>
